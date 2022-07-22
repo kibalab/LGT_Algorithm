@@ -25,7 +25,7 @@ namespace LGT
 
             var lastIndex = heap.Count - 1;
             heap[index] = heap[lastIndex];
-            heap.RemoveAt(lastIndex);
+            heap.RemoveAt(index);
 
             OrderFromFirst(index);
 
@@ -34,7 +34,7 @@ namespace LGT
 
         public void OrderFromEnd(int lastIndex)
         {
-            var parentIndex = lastIndex / 2;
+            var parentIndex = (lastIndex) / 2;
             if (heap[lastIndex] > heap[parentIndex])
             {
                 var tmp = heap[parentIndex];
@@ -46,10 +46,22 @@ namespace LGT
 
         public void OrderFromFirst(int parentIndex)
         {
-            var leftChildIndex = parentIndex / 2;
+            if (heap.Count <= 1 || parentIndex / 2 + 1 >= heap.Count - 1) return;
+
+            var leftChildIndex = (parentIndex) * 2;
             var rightChildIndex = leftChildIndex + 1;
 
+
+            foreach(var ob in heap)
+            {
+                Console.WriteLine(ob);
+            }
+
             var largestIndex = -1;
+            Console.WriteLine($"[OrderFromFirst] {parentIndex}");
+            Console.WriteLine($"[OrderFromFirst] {leftChildIndex}|{rightChildIndex}");
+
+            if (leftChildIndex >= heap.Count || rightChildIndex >= heap.Count) return;
             if (heap[leftChildIndex] > heap[rightChildIndex])
             {
                 if (heap[leftChildIndex] < heap[parentIndex]) return;
@@ -61,10 +73,13 @@ namespace LGT
                 largestIndex = rightChildIndex;
             }
 
-            var tmp = heap[largestIndex];
-            heap[largestIndex] = heap[parentIndex];
-            heap[parentIndex] = tmp;
-            OrderFromFirst(largestIndex);
+            if (heap[largestIndex] > heap[parentIndex])
+            {
+                var tmp = heap[parentIndex];
+                heap[parentIndex] = heap[largestIndex];
+                heap[largestIndex] = tmp;
+                OrderFromFirst(largestIndex);
+            }
         }
     }
 }

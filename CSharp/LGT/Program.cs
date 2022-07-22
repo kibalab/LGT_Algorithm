@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 
 namespace LGT
@@ -7,7 +8,7 @@ namespace LGT
     public class Machine
     {
         public int ID;
-        public Queue<JOB> Jobs;
+        public Queue<JOB> Jobs = new Queue<JOB>();
 
         public float Avail
         {
@@ -23,10 +24,15 @@ namespace LGT
             }
         }
 
-        public Machine(int ID) => this.ID = ID;
+        public Machine(int ID)
+        {
+            this.ID = ID;
+        }
 
         public static bool operator >(Machine a, Machine b) => a.Avail > b.Avail;
         public static bool operator <(Machine a, Machine b) => a.Avail < b.Avail;
+
+        public override string ToString() => $"(Machine #{ID} T{Avail})";
     }
 
     public class JOB
@@ -54,18 +60,23 @@ namespace LGT
     class Program
     {
         public static CustomHeap<Machine> heap = new CustomHeap<Machine>();
-        public JOB[] Jobs = new JOB[] { 8, 7, 6, 5, 3, 2, 1 };
+        public static List<JOB> Jobs = new List<JOB> { 8, 7, 6, 5, 3, 2, 1 };
 
         static void Main(string[] args)
         {
-
-
-            for(var i = 1; i<= 3; i++) // 3 is machine count
+            for(var i = 0; i< 3; i++) // 3 is machine count
             {
                 heap.Add(new Machine(i));
             }
 
-            heap.Remove(2).Jobs
+            foreach (var job in Jobs)
+            {
+                var machine = heap.Remove(2);
+                machine.Jobs.Enqueue(job);
+                Console.WriteLine($"[Job Assignment] Machine : #{machine.ID}, Current Avail : {machine.Avail}");
+                Console.WriteLine($"                 Job Avail : {job.Avail}");
+                heap.Add(machine);
+            }
         }
     }
 }

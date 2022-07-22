@@ -1,0 +1,14 @@
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\bin\Debug\netcoreapp3.1\LGT.exe
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\bin\Debug\netcoreapp3.1\LGT.deps.json
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\bin\Debug\netcoreapp3.1\LGT.runtimeconfig.json
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\bin\Debug\netcoreapp3.1\LGT.runtimeconfig.dev.json
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\bin\Debug\netcoreapp3.1\LGT.dll
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\bin\Debug\netcoreapp3.1\LGT.pdb
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\obj\Debug\netcoreapp3.1\LGT.csproj.AssemblyReference.cache
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\obj\Debug\netcoreapp3.1\LGT.GeneratedMSBuildEditorConfig.editorconfig
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\obj\Debug\netcoreapp3.1\LGT.AssemblyInfoInputs.cache
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\obj\Debug\netcoreapp3.1\LGT.AssemblyInfo.cs
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\obj\Debug\netcoreapp3.1\LGT.csproj.CoreCompileInputs.cache
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\obj\Debug\netcoreapp3.1\LGT.dll
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\obj\Debug\netcoreapp3.1\LGT.pdb
+E:\OtherProjects\Algorithms\LGT\CSharp\LGT\obj\Debug\netcoreapp3.1\LGT.genruntimeconfig.cache
