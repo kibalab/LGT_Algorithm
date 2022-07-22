@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Heap
+namespace LGT
 {
-    public interface IComparable
-    {
-        public static bool operator >(IComparable a, IComparable b) => a > b;
-        public static bool operator <(IComparable a, IComparable b) => a < b;
-    }
 
-    public class CustomHeap<T> where T : IComparable
+    public class CustomHeap<T> where T : Machine
     {
         public CustomHeap()
         { }
 
-        public List<IComparable> heap = new List<IComparable>(); //Use List<> instead of DynamicArray
+        public List<Machine> heap = new List<Machine>(); //Use List<> instead of DynamicArray
 
-        public void Add(IComparable data)
+        public void Add(Machine data)
         {
             heap.Add(data);
 
@@ -25,7 +19,7 @@ namespace Heap
             OrderFromEnd(lastIndex);
         }
 
-        public IComparable Remove(int index)
+        public Machine Remove(int index)
         {
             var removedObject = heap[index];
 
