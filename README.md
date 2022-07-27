@@ -1,4 +1,4 @@
-# LGT_Algorithm
+# LPT_Algorithm
 
 An algorithm that uses heap to determine the allocation of a process considering its usage time
 
